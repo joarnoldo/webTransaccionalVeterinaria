@@ -1,4 +1,3 @@
-@@ -0,0 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,8 +110,10 @@
                                                 </div>
                                             </div>
                                             
-                                            
-                                                
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <a class="text" href="registroUsuario.php">Crear una cuenta</a>
+                                                </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
