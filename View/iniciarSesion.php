@@ -45,8 +45,7 @@
                                     class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
                             <a href="#" class="d-flex align-items-center justify-content-center"><span
                                     class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                           
                         </p>
                     </div>
                 </div>
@@ -67,7 +66,7 @@
                     <li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item active"><a href="iniciarSesion.php" class="nav-link">Iniciar Sesión</a></li>
                 </ul>
@@ -89,7 +88,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center">
@@ -122,6 +121,11 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <a class="text" href="registrarUsuario.php">Registrase</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
                                                 <p><a href="home.php" class="btn btn-primary mr-md-4 py-3 px-4">Iniciar Sesión<span class="ion-ios-arrow-forward"></span></a></p>
                                                 </div>
                                             </div>
@@ -130,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="col-md-5 d-flex align-items-stretch">
-                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/img.jpg);">
+                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/sesion.jpg);">
                                 </div>
                             </div>
                         </div>
