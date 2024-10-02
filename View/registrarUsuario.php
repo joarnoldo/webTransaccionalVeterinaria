@@ -61,11 +61,10 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-
+                    <li class="nav-item"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
+                    <li class="nav-item"><a href="vet.html" class="nav-link">Veterinaria</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallería</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item active"><a href="iniciarSesion.php" class="nav-link">Iniciar Sesión</a></li>
                 </ul>
@@ -98,37 +97,66 @@
                                     <h3 class="mb-4">Registrarse</h3>
                                     <h5 class="mb-4">Ingresa tus datos</h5>
                                     <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-
-                                        <div class="row">
+                                        <div class="row">                                           
                                             <div class="col-md-12">
-                                                <label for="exampleInputtext1" class="form-label">Nombre</label>
+                                                <label for="Name" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" name="Name" id="Name"
-                                                    placeholder="Nombre">
+                                                    placeholder="Nombre" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="LastName" class="form-label">Apellido</label>
+                                                <input type="text" class="form-control" name="LastName" id="LastName"
+                                                    placeholder="Apellido" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="Username" class="form-label">Nombre de Usuario</label>
+                                                <input type="text" class="form-control" name="Username" id="Username"
+                                                    placeholder="Nombre de Usuario" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="Email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="Email" id="Email"
+                                                    placeholder="Email" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="Password" class="form-label">Contraseña</label>
+                                                <input type="password" class="form-control" name="Password"
+                                                    id="Password" placeholder="Contraseña" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="ConfirmPassword" class="form-label">Confirmar
+                                                    Contraseña</label>
+                                                <input type="password" class="form-control" name="ConfirmPassword"
+                                                    id="ConfirmPassword" placeholder="Confirmar Contraseña" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="Phone" class="form-label">Número de Teléfono</label>
+                                                <input type="tel" class="form-control" name="Phone" id="Phone"
+                                                    placeholder="Número de Teléfono" required>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="Address" class="form-label">Dirección</label>
+                                                <input type="text" class="form-control" name="Address" id="Address"
+                                                    placeholder="Dirección">
                                             </div>
 
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="email">Email</label>
-                                                    <input type="text" class="form-control" name="email" id="email"
-                                                        placeholder="Email">
+                                                    <p>¿Ya tienes cuenta? <a href="iniciarSesion.php">Iniciar sesión</a>
+                                                    </p>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12">
-                                                <label class="label" for="Password">Contraseña</label>
-                                                <input type="text" class="form-control" name="Password" id="Password"
-                                                    placeholder="Contraseña">
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <a class="text" href="iniciarSesion.php">Ya tienes cuenta? Iniciar sesión</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <a href="home.php"
-                                                    class="btn btn-primary w-100 py-8 fs-4 mb-4">Registrarse</a>
+                                                <button type="submit"
+                                                    class="btn btn-primary w-100 py-3">Registrarse</button>
                                             </div>
                                         </div>
                                     </form>
@@ -146,7 +174,6 @@
     </section>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
 

@@ -62,10 +62,10 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
+                    <li class="nav-item"><a href="vet.html" class="nav-link">Veterinaria</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallería</a></li>
                     
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item active"><a href="iniciarSesion.php" class="nav-link">Iniciar Sesión</a></li>
@@ -186,9 +186,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
-    <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 
 

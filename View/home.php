@@ -48,17 +48,17 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    	<a class="navbar-brand" href="index.html"><span class="flaticon-pawprint-1 mr-2"></span>Pet sitting</a>
+	    	<a class="navbar-brand" href="../index.php"><span class="flaticon-pawprint-1 mr-2"></span>Pet sitting</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+	        	<li class="nav-item active"><a href="../index.php" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
+	        	<li class="nav-item"><a href="vet.html" class="nav-link">Veterinaria</a></li>
+	        	<li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+	          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallería</a></li>
 	          
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="iniciarSesion.php" class="nav-link">Inciar Sesión</a></li>
@@ -639,7 +639,7 @@
 			    					<div class="form-field">
 	          					<div class="select-wrap">
 	                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-	                      <select name="" id="" class="form-control">
+	                      <select name="service" id="service" class="form-control">
 	                      	<option value="">Select services</option>
 	                        <option value="">Cat Sitting</option>
 	                        <option value="">Dog Walk</option>
@@ -746,7 +746,6 @@
 						<h2 class="footer-heading">Have a Questions?</h2>
 						<div class="block-23 mb-3">
               <ul>
-                <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
                 <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
                 <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
               </ul>
@@ -784,8 +783,6 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
 
