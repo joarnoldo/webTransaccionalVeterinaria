@@ -81,7 +81,7 @@
                 <div class="col-md-9 ftco-animate pb-5">
                     <p class="breadcrumbs mb-2"><span class="mr-2"><a href="home.php">Home <i
                                     class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-0 bread">Registrase</h1>
+                    <h1 class="mb-0 bread">Registrarse</h1>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-7 order-md-1">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <h3 class="mb-4">Registrase</h3>
+                                    <h3 class="mb-4">Registrarse</h3>
                                     <h5 class="mb-4">Ingresa tus datos</h5>
                                     <form method="POST" id="contactForm" name="contactForm" class="contactForm">
 
@@ -106,7 +106,6 @@
                                                     placeholder="Nombre">
                                             </div>
 
-
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="email">Email</label>
@@ -115,22 +114,21 @@
                                                 </div>
                                             </div>
 
-
                                             <div class="col-md-12">
                                                 <label class="label" for="Password">Contraseña</label>
                                                 <input type="text" class="form-control" name="Password" id="Password"
                                                     placeholder="Contraseña">
                                             </div>
 
-
-
-                                            <div class="col-md-12 d-flex align-items-center justify-content-center">
-                                                <p class="fs-4 mb-0 fw-bold">¿Ya tienes una cuenta?</p>
-                                                <a class="text-primary fw-bold ms-2" href="iniciarSesion.php">Iniciar
-                                                    sesión</a>
-                                            </div>
                                             <div class="col-md-12">
-                                                <a href="./index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4">Registrarse</a>
+                                                <div class="form-group">
+                                                    <a class="text" href="iniciarSesion.php">Ya tienes cuenta? Iniciar sesión</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <a href="./index.html"
+                                                    class="btn btn-primary w-100 py-8 fs-4 mb-4">Registrarse</a>
                                             </div>
                                         </div>
                                     </form>

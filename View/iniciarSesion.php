@@ -121,7 +121,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <a class="text" href="registrarUsuario.php">Registrase</a>
+                                                    <a class="text" href="registrarUsuario.php">Registrarse</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

@@ -112,7 +112,7 @@
                                             
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <a class="text" href="registroUsuario.php">Crear una cuenta</a>
+                                                    <a class="text" href="registrarUsuario.php">Crear una cuenta</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
