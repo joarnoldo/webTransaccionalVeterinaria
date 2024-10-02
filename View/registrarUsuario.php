@@ -127,7 +127,7 @@
                                             </div>
 
                                             <div class="col-md-12">
-                                                <a href="./index.html"
+                                                <a href="home.php"
                                                     class="btn btn-primary w-100 py-8 fs-4 mb-4">Registrarse</a>
                                             </div>
                                         </div>
