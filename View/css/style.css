@@ -3465,10 +3465,11 @@ input[type="button"].btn-block {
     justify-content: space-between; }
 
 .navbar-brand {
+  flex-grow: 0;
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-right: 7rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap; }

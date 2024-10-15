@@ -1,3 +1,7 @@
+<?php 
+    include_once 'layout.php';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -26,6 +30,7 @@
 </head>
 
 <body>
+
     <div class="wrap">
         <div class="container">
             <div class="row">
@@ -51,40 +56,11 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="home.php"><span class="flaticon-pawprint-1 mr-2"></span>Pet sitting</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
-                    <li class="nav-item"><a href="vet.html" class="nav-link">Veterinaria</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallería</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item active"><a href="iniciarSesion.php" class="nav-link">Iniciar Sesión</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <?php 
+    MostrarMenu();
+    ?>
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-end">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <p class="breadcrumbs mb-2"><span class="mr-2"><a href="home.php">Home <i
-                                    class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-0 bread">Registrarse</h1>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-section bg-light">
         <div class="container">
@@ -97,66 +73,63 @@
                                     <h3 class="mb-4">Registrarse</h3>
                                     <h5 class="mb-4">Ingresa tus datos</h5>
                                     <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                        <div class="row">                                           
-                                            <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Name" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" name="Name" id="Name"
                                                     placeholder="Nombre" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="LastName" class="form-label">Apellido</label>
                                                 <input type="text" class="form-control" name="LastName" id="LastName"
                                                     placeholder="Apellido" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Username" class="form-label">Nombre de Usuario</label>
                                                 <input type="text" class="form-control" name="Username" id="Username"
                                                     placeholder="Nombre de Usuario" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Email" class="form-label">Email</label>
                                                 <input type="email" class="form-control" name="Email" id="Email"
                                                     placeholder="Email" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Password" class="form-label">Contraseña</label>
                                                 <input type="password" class="form-control" name="Password"
                                                     id="Password" placeholder="Contraseña" required>
                                             </div>
 
-                                            <div class="col-md-12">
-                                                <label for="ConfirmPassword" class="form-label">Confirmar
-                                                    Contraseña</label>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="ConfirmPassword" class="form-label">Confirmar Contraseña</label>
                                                 <input type="password" class="form-control" name="ConfirmPassword"
                                                     id="ConfirmPassword" placeholder="Confirmar Contraseña" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Phone" class="form-label">Número de Teléfono</label>
                                                 <input type="tel" class="form-control" name="Phone" id="Phone"
                                                     placeholder="Número de Teléfono" required>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-6 mb-3">
                                                 <label for="Address" class="form-label">Dirección</label>
                                                 <input type="text" class="form-control" name="Address" id="Address"
                                                     placeholder="Dirección">
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 mb-3 text-center">
                                                 <div class="form-group">
-                                                    <p>¿Ya tienes cuenta? <a href="iniciarSesion.php">Iniciar sesión</a>
-                                                    </p>
+                                                    <p>¿Ya tienes cuenta? <a href="iniciarSesion.php">Iniciar sesión</a></p>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12">
-                                                <button type="submit"
-                                                    class="btn btn-primary w-100 py-3">Registrarse</button>
+                                                <button type="submit" class="btn btn-primary w-100 py-3">Registrarse</button>
                                             </div>
                                         </div>
                                     </form>
