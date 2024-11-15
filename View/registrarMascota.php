@@ -45,8 +45,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-7 order-md-1">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <h3 class="mb-4">Registrarse</h3>
-                                    <h5 class="mb-4">Ingresa tus datos</h5>
+                                    <h3 class="mb-4">Registre a su mascota</h3>
                                     <?php
                                     if(isset($_POST["txtMensaje"]))
                                     {
@@ -55,69 +54,54 @@
                                 ?>
                                     <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="Name" class="form-label">Nombre</label>
-                                                <input type="text" class="form-control" name="Name" id="Name"
+                                        <div class="col-md-6 mb-3">
+                                                <label for="Nombre" class="form-label">Nombre</label>
+                                                <input type="text" class="form-control" name="Nombre" id="Nombre"
                                                     placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="LastName" class="form-label">Apellido</label>
-                                                <input type="text" class="form-control" name="LastName" id="LastName"
+                                                <label for="Especie" class="form-label">Especie</label>
+                                                <input type="text" class="form-control" name="Especie" id="Especie"
                                                     placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="Username" class="form-label">Nombre de Usuario</label>
-                                                <input type="text" class="form-control" name="Username" id="Username"
+                                                <label for="Raza" class="form-label">Raza</label>
+                                                <input type="text" class="form-control" name="Raza" id="Raza"
                                                     placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="Email" class="form-label">Email</label>
-                                                <input type="email" class="form-control" name="Email" id="Email"
+                                                <label for="Sexo" class="form-label">Sexo</label>
+                                                <select class="form-control" name="Sexo" id="Sexo" required>
+                                                <option value="Macho">Macho</option>
+                                                <option value="Hembra">Hembra</option>
+                                              </select>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                                <input type="date" class="form-control" name="FechaNacimiento" id="FechaNacimiento"
                                                     placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="Password" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" name="Password"
-                                                    id="Password" placeholder="" required>
+                                                <label for="PropietarioID" class="form-label">Propietario ID</label>
+                                                <input type="text" class="form-control" name="PropietarioID"
+                                                    id="PropietarioID" placeholder="" required>
                                             </div>
 
-                                            <div class="col-md-6 mb-3">
-                                                <label for="ConfirmPassword" class="form-label">Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" name="ConfirmPassword"
-                                                    id="ConfirmPassword" placeholder="" required>
-                                            </div>
-
-                                            <div class="col-md-6 mb-3">
-                                                <label for="Phone" class="form-label">Teléfono</label>
-                                                <input type="tel" class="form-control" name="Phone" id="Phone"
-                                                    placeholder="" required>
-                                            </div>
-
-                                            <div class="col-md-6 mb-3">
-                                                <label for="Address" class="form-label">Dirección</label>
-                                                <input type="text" class="form-control" name="Address" id="Address"
-                                                    placeholder="">
-                                            </div>
-
-                                            <div class="col-md-12 mb-3 text-center">
-                                                <div class="form-group">
-                                                    <p>¿Ya tienes cuenta? <a href="iniciarSesion.php">Iniciar sesión</a></p>
-                                                </div>
-                                            </div>
-
+                                            
                                             <div class="col-md-12">
-                                                <button type="submit" class="btn btn-primary w-100 py-3" id="btnRegistrarUsuario" name="btnRegistrarUsuario">Registrarse</button>
+                                                <button type="submit" class="btn btn-primary w-100 py-3" name="btnRegistrarMascota">Registrar mascota</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="col-md-5 order-md-2 d-flex align-items-stretch">
-                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/dalmata.jpg);">
+                                <div class="info-wrap w-100 p-5 img" style="background-image: url(images/RMasc.jpg);">
                                 </div>
                             </div>
                         </div>

@@ -11,7 +11,7 @@ function MostrarMenu()
     $vet_active = (strpos($uri, 'veterinaria.php') !== false) ? 'active' : '';
     $services_active = (strpos($uri, 'servicios.php') !== false) ? 'active' : '';
     $gallery_active = (strpos($uri, 'galeria.php') !== false) ? 'active' : '';
-    $blog_active = (strpos($uri, 'blog.html') !== false) ? 'active' : '';
+    $mascota_active = (strpos($uri, 'registrarMascota.php') !== false) ? 'active' : '';
     $login_active = (strpos($uri, 'iniciarSesion.php') !== false) ? 'active' : '';
 
 
@@ -36,9 +36,7 @@ function MostrarMenu()
                             <a href="https://www.instagram.com/?hl=es-la%3F%2F"
                                 class="d-flex align-items-center justify-content-center"><span
                                     class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="https://dribbble.com/signup/new"
-                                class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i
-                                        class="sr-only">Dribbble</i></span></a>
+                            
                         </p>
                     </div>
                 </div>
@@ -59,7 +57,7 @@ function MostrarMenu()
 	        	<li class="nav-item ' . $vet_active . '"><a href="vet.html" class="nav-link">Veterinaria</a></li>
 	        	<li class="nav-item ' . $services_active . '"><a href="servicios.php" class="nav-link">Servicios</a></li>
 	          <li class="nav-item ' . $gallery_active . '"><a href="galeria.php" class="nav-link">Gallería</a></li>
-	          <li class="nav-item ' . $blog_active . '"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item ' . $mascota_active . '"><a href="registrarMascota.php" class="nav-link">Registrar mascota</a></li>
 	          <li class="nav-item ' . $login_active . '"><a href="iniciarSesion.php" class="nav-link">Iniciar Sesión</a></li>
 	        </ul>
 	      </div>

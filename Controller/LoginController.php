@@ -50,7 +50,7 @@ if(isset($_POST["btnRegistrarUsuario"]))
     else
     {
         // Llamar al modelo para registrar el usuario
-        $resultado = RegistrarPropietarioModel($nombre,$apellido,$nombreUsuario,$correoElectronico,$contrasenna,$telefono,$direccion);
+        $resultado = RegistrarUsuarioModel($nombre,$apellido,$nombreUsuario,$correoElectronico,$contrasenna,$telefono,$direccion);
 
         if($resultado == true)
         {
@@ -62,6 +62,30 @@ if(isset($_POST["btnRegistrarUsuario"]))
         }
     }
 }
+
+if(isset($_POST["btnRegistrarMascota"]))
+{ 
+    $nombre = $_POST["Nombre"];
+    $especie = $_POST["Especie"];
+    $raza = $_POST["Raza"];
+    $sexo = $_POST["Sexo"];
+    $fechaNacimiento = $_POST["FechaNacimiento"];
+    $propietarioID = $_POST["PropietarioID"];
+   
+       
+    $resultado = RegistrarMascotaModel($nombre,$especie,$raza,$sexo,$fechaNacimiento,$propietarioID);
+
+        if($resultado == true)
+        {
+            $_POST["txtMensaje"] = "Informacion registrada";
+        }
+        else
+        {
+            $_POST["txtMensaje"] = "Su información no se ha registrado correctamente, revisar informacion";
+        }
+        
+    }
+    
 
 if(isset($_POST["btnRecuperarAcceso"]))
     {
@@ -176,4 +200,3 @@ if(isset($_POST["btnRecuperarAcceso"]))
     }
 
 ?>
-

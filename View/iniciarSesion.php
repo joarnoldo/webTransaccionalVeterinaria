@@ -37,7 +37,7 @@
     ?>
 
     <!-- END nav -->
- 
+
     <section class="ftco-section bg-light">
         <div class="container">
             <div class="row justify-content-center">
@@ -58,12 +58,22 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="password">Contraseña</label>
-                                                    <input type="password" class="form-control" name="password" id="password" placeholder="">
+                                                    <input type="password" class="form-control" name="password"
+                                                        id="password" placeholder="">
                                                 </div>
+                                                
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <button type="submit" name="btnIniciarSesion" class="btn btn-primary mr-md-4 py-3 px-4">Iniciar Sesión</button>
+                                                    <button type="submit" name="btnIniciarSesion"
+                                                        class="btn btn-primary mr-md-4 py-3 px-4">Iniciar
+                                                        Sesión</button>
+                                                </div>
+                                               
+
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <p class="fs-4 mb-0 fw-bold">No tienes una cuenta?</p>
+                                                    <a class="text-primary fw-bold ms-2" href="registrarUsuario.php">Registrarse</a>
                                                 </div>
                                             </div>
                                         </div>

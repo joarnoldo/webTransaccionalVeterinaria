@@ -1154,7 +1154,7 @@
               <li><a href="#" class="py-2 d-block">Acerca de</a></li>
               <li><a href="#" class="py-2 d-block">Servicios</a></li>
               <li><a href="#" class="py-2 d-block">Trabajos</a></li>
-              <li><a href="#" class="py-2 d-block">Blog</a></li>
+              <li><a href="#" class="py-2 d-block">Registro mascota</a></li>
               <li><a href="#" class="py-2 d-block">Contacto</a></li>
             </ul>
           </div>

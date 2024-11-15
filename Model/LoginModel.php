@@ -28,7 +28,7 @@ function RegistrarPropietarioModel($nombre,$apellido,$nombreUsuario,$correoElect
         $enlace = AbrirBD();
     
         // Ejecutar el procedimiento almacenado
-        $sentencia = "CALL RegistrarPropietario('$nombre', '$apellido', '$nombreUsuario', '$correoElectronico', '$contrasenna', '$telefono', '$direccion')";
+        $sentencia = "CALL RegistrarPropietario('$nombre','$apellido','$nombreUsuario','$correoElectronico','$contrasenna','$telefono','$direccion')";
         $resultado = $enlace -> query($sentencia);
 
         // Cerrar la conexión
@@ -39,6 +39,40 @@ function RegistrarPropietarioModel($nombre,$apellido,$nombreUsuario,$correoElect
         return false;
     }
 }
+function RegistrarUsuarioModel($nombre,$apellido,$nombreUsuario,$correoElectronico,$contrasenna,$telefono,$direccion)
+    {
+        try
+        {
+            $enlace = AbrirBD();
+
+            $sentencia = "CALL RegistrarUsuario('$nombre','$apellido','$nombreUsuario','$correoElectronico','$contrasenna','$telefono','$direccion')";
+            $resultado = $enlace -> query($sentencia);
+
+            CerrarBD($enlace);
+            return $resultado;
+        }
+        catch(Exception $ex)
+        {
+            return false;
+        }
+    }
+ function RegistrarMascotaModel($nombre,$especie,$raza,$sexo,$fechaNacimiento,$propietarioID)
+    {
+        try
+        {
+            $enlace = AbrirBD();
+
+            $sentencia = "CALL RegistrarMascota('$nombre','$especie','$raza','$sexo','$fechaNacimiento','$propietarioID')";
+            $resultado = $enlace -> query($sentencia);
+
+            CerrarBD($enlace);
+            return $resultado;
+        }
+        catch(Exception $ex)
+        {
+            return false;
+        }
+    }
 
 function RecuperarAccesoModel($correo)
     {
