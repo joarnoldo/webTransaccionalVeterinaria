@@ -1,5 +1,6 @@
 <?php 
     include_once 'layout.php';
+    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Controller/LoginController.php';
 ?>
 
 <!doctype html>
@@ -31,32 +32,6 @@
 
 <body>
 
-    <div class="wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <p class="mb-0 phone pl-md-2">
-                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +506 2222222</a>
-                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> vet@email.com</a>
-                    </p>
-                </div>
-                <div class="col-md-6 d-flex justify-content-md-end">
-                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <?php 
     MostrarMenu();
     ?>
@@ -77,49 +52,49 @@
                                             <div class="col-md-6 mb-3">
                                                 <label for="Name" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" name="Name" id="Name"
-                                                    placeholder="Nombre" required>
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="LastName" class="form-label">Apellido</label>
                                                 <input type="text" class="form-control" name="LastName" id="LastName"
-                                                    placeholder="Apellido" required>
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="Username" class="form-label">Nombre de Usuario</label>
                                                 <input type="text" class="form-control" name="Username" id="Username"
-                                                    placeholder="Nombre de Usuario" required>
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="Email" class="form-label">Email</label>
                                                 <input type="email" class="form-control" name="Email" id="Email"
-                                                    placeholder="Email" required>
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="Password" class="form-label">Contraseña</label>
                                                 <input type="password" class="form-control" name="Password"
-                                                    id="Password" placeholder="Contraseña" required>
+                                                    id="Password" placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="ConfirmPassword" class="form-label">Confirmar Contraseña</label>
                                                 <input type="password" class="form-control" name="ConfirmPassword"
-                                                    id="ConfirmPassword" placeholder="Confirmar Contraseña" required>
+                                                    id="ConfirmPassword" placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="Phone" class="form-label">Número de Teléfono</label>
+                                                <label for="Phone" class="form-label">Teléfono</label>
                                                 <input type="tel" class="form-control" name="Phone" id="Phone"
-                                                    placeholder="Número de Teléfono" required>
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="Address" class="form-label">Dirección</label>
                                                 <input type="text" class="form-control" name="Address" id="Address"
-                                                    placeholder="Dirección">
+                                                    placeholder="">
                                             </div>
 
                                             <div class="col-md-12 mb-3 text-center">
@@ -129,7 +104,7 @@
                                             </div>
 
                                             <div class="col-md-12">
-                                                <button type="submit" class="btn btn-primary w-100 py-3">Registrarse</button>
+                                                <button type="submit" class="btn btn-primary w-100 py-3" id="btnRegistrarUsuario" name="btnRegistrarUsuario">Registrarse</button>
                                             </div>
                                         </div>
                                     </form>
@@ -145,6 +120,12 @@
             </div>
         </div>
     </section>
+
+    
+    <?php
+    MostrarFooter();
+    ?>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>

@@ -1,12 +1,13 @@
 <?php 
     include_once 'layout.php';
+    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Controller/LoginController.php'; // Controlador llama al modelo
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Smile Pet </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -31,32 +32,7 @@
 
 <body>
 
-    <div class="wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <p class="mb-0 phone pl-md-2">
-                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
-                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
-                    </p>
-                </div>
-                <div class="col-md-6 d-flex justify-content-md-end">
-                    <div class="social-media">
-                        <p class="mb-0 d-flex">
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <?php 
     MostrarMenu();
@@ -74,16 +50,19 @@
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h3 class="mb-4">Recuperar Acceso</h3>
                                     <h5 class="mb-4">Ingresa tus datos</h5>
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <form action="" method="POST" id="contactForm" name="contactForm"
+                                        class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">
+
                                                 <div class="form-group">
-                                                    <label class="label" for="email">Email</label>
-                                                    <input type="text" class="form-control" name="email" id="email"
-                                                        placeholder="Email">
+                                                    <label class="label" for="email">Correo Electrónico</label>
+                                                    <input type="email" class="form-control" name="txtCorreo"
+                                                        id="txtCorreo" placeholder="" required>
                                                 </div>
+
                                             </div>
-                                            
+
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <a class="text" href="registrarUsuario.php">Crear una cuenta</a>
@@ -91,7 +70,10 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                <p><a href="home.php" class="btn btn-primary mr-md-4 py-3 px-4">Recuperar cuenta<span class="ion-ios-arrow-forward"></span></a></p>
+                                                    <!--Input de tipo submit-->
+                                                    <input type="submit" class="btn btn-primary mr-md-4 py-3 px-4"
+                                                        value="Recuperar Cuenta" id=btnRecuperarAcceso name=btnRecuperarAcceso>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -109,22 +91,9 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-md-12 text-center">
-
-                    <p class="copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                        document.write(new Date().getFullYear());
-                        </script> All rights reserved by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php
+    MostrarFooter();
+    ?>
 
 
     <!-- loader -->
