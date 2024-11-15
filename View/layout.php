@@ -8,7 +8,7 @@ function MostrarMenu()
     // Define las rutas para cada enlace
     $home_active = (strpos($uri, 'home.php') !== false) ? 'active' : '';
     $about_active = (strpos($uri, 'acercaDeNosotros.html') !== false) ? 'active' : '';
-    $vet_active = (strpos($uri, 'veterinaria.php') !== false) ? 'active' : '';
+    $vet_active = (strpos($uri, 'citas.php') !== false) ? 'active' : '';
     $services_active = (strpos($uri, 'servicios.php') !== false) ? 'active' : '';
     $gallery_active = (strpos($uri, 'galeria.php') !== false) ? 'active' : '';
     $mascota_active = (strpos($uri, 'registrarMascota.php') !== false) ? 'active' : '';
@@ -54,7 +54,7 @@ function MostrarMenu()
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item ' . $home_active . '"><a href="../index.php" class="nav-link">Home</a></li>
 	        	<li class="nav-item ' . $about_active . '"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
-	        	<li class="nav-item ' . $vet_active . '"><a href="vet.html" class="nav-link">Veterinaria</a></li>
+	        	<li class="nav-item ' . $vet_active . '"><a href="citas.php" class="nav-link">Citas</a></li>
 	        	<li class="nav-item ' . $services_active . '"><a href="servicios.php" class="nav-link">Servicios</a></li>
 	          <li class="nav-item ' . $gallery_active . '"><a href="galeria.php" class="nav-link">Gallería</a></li>
 	          <li class="nav-item ' . $mascota_active . '"><a href="registrarMascota.php" class="nav-link">Registrar mascota</a></li>

@@ -199,4 +199,66 @@ if(isset($_POST["btnRecuperarAcceso"]))
         }
     }
 
+    if (isset($_POST["btnAgendarCita"])) {
+        $fechaHora = $_POST["FechaHora"];
+        $motivo = $_POST["Motivo"];
+        $veterinarioID = $_POST["VeterinarioID"];
+        $mascotaID = $_POST["MascotaID"];
+        $estadoCitaID = 'Pendiente'; 
+        
+        $resultado = AgendarCitaModel($fechaHora, $motivo, $mascotaID, $veterinarioID, $estadoCitaID);
+        
+        if ($resultado == true) {
+            $_POST["txtMensaje"] = "Cita programada correctamente";
+        } else {
+            $_POST["txtMensaje"] = "Error al programar la cita. Por favor, revise los datos.";
+        }
+    }
+    
+    
+    if (isset($_POST["btnModificarCita"])) {
+        $citaID = $_POST["CitaID"];
+        $nuevaFechaHora = $_POST["NuevaFechaHora"];
+        $nuevoMotivo = $_POST["NuevoMotivo"];
+        $nuevoVeterinarioID = $_POST["NuevoVeterinarioID"];
+    
+        // Llamar al modelo para modificar la cita
+        $resultado = ModificarCitaModel($citaID, $nuevaFechaHora, $nuevoMotivo, $nuevoVeterinarioID);
+    
+        if ($resultado == true) {
+            $_POST["txtMensaje"] = "Cita modificada correctamente";
+        } else {
+            $_POST["txtMensaje"] = "Error al modificar la cita. Por favor, revise los datos.";
+        }
+    }
+
+    if (isset($_POST["btnCancelarCita"])) {
+        $citaID = $_POST["CitaID"];
+        
+        // Llamar al modelo para cancelar la cita
+        $resultado = CancelarCitaModel($citaID);
+        
+        if ($resultado == true) {
+            $_POST["txtMensaje"] = "Cita cancelada correctamente";
+        } else {
+            $_POST["txtMensaje"] = "Error al cancelar la cita. Por favor, revise los datos.";
+        }
+    }    
+
+    if (isset($_POST["btnHistorialCita"])) {
+        $mascotaID = $_POST["MascotaID"];
+        
+        // Llamar al modelo para obtener el historial
+        $resultado = HistorialCitaModel($mascotaID);
+    
+        if ($resultado != null && $resultado->num_rows > 0) {
+            $historial = [];
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                $historial[] = $fila; // Almacenar cada fila en el historial
+            }
+            $_SESSION["HistorialCita"] = $historial; // Guardar en sesión para usar en la vista
+        } else {
+            $_POST["txtMensaje"] = "No se encontraron citas para esta mascota.";
+        }
+    }       
 ?>

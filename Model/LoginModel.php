@@ -114,4 +114,63 @@ function RecuperarAccesoModel($correo)
         }
     }
 
+    function AgendarCitaModel($fechaHora, $motivo, $mascotaID, $veterinarioID, $estadoCitaID = 'Pendiente') 
+    {
+        try {
+            $enlace = AbrirBD();
+            $sentencia = "CALL AgendarCita('$fechaHora', '$motivo', $mascotaID, $veterinarioID, '$estadoCitaID')";
+            $resultado = $enlace->query($sentencia);
+            CerrarBD($enlace);
+            return $resultado;
+        } catch (Exception $ex) {
+            return null;
+        }
+    }
+    
+
+    function ModificarCitaModel($citaID, $nuevaFechaHora, $nuevoMotivo, $nuevoEstadoCitaID)
+    {
+        try {
+            $enlace = AbrirBD();
+
+            $sentencia = "CALL ModificarCita($citaID, '$nuevaFechaHora', '$nuevoMotivo', $nuevoEstadoCitaID)";
+            $resultado = $enlace->query($sentencia);
+
+            CerrarBD($enlace);
+            return $resultado;
+        } catch (Exception $ex) {
+            return null;
+        }
+    }
+
+    function CancelarCitaModel($citaID)
+    {
+        try {
+            $enlace = AbrirBD();
+
+            $sentencia = "CALL CancelarCita($citaID)";
+            $resultado = $enlace->query($sentencia);
+
+            CerrarBD($enlace);
+            return $resultado;
+        } catch (Exception $ex) {
+            return null;
+        }
+    }
+
+    function HistorialCitaModel($mascotaID)
+    {
+        try {
+            $enlace = AbrirBD();
+
+            // Llamada al procedimiento almacenado para obtener el historial de citas
+            $sentencia = "CALL HistorialCita($mascotaID)";
+            $resultado = $enlace->query($sentencia);
+
+            CerrarBD($enlace);
+            return $resultado;
+        } catch (Exception $ex) {
+            return null;
+        }
+    }
 ?>
