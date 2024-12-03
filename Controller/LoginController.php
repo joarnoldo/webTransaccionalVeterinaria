@@ -1,67 +1,51 @@
 <?php
 
 include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Model/LoginModel.php'; // Controlador llama al modelo
+include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Model/UsuarioModel.php'; // Controlador llama al modelo
 
-if (session_status() == PHP_SESSION_NONE) {
+
+if(session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (isset($_POST["btnIniciarSesion"])) {
+// Manejo del inicio de sesión
+if(isset($_POST["btnIniciarSesion"]))
+{
     $correo = $_POST["email"];
     $contrasenna = $_POST["password"];
 
     $resultado = IniciarSesionModel($correo, $contrasenna);
 
-    if ($resultado != null && $resultado->num_rows > 0) {
-        $datos = mysqli_fetch_array($resultado);
-        $_SESSION["NombreUsuario"] = $datos["NombreUsuario"];
-        $_SESSION["ConsecutivoUsuario"] = $datos["Consecutivo"];
-        $_SESSION["ConsecutivoRolUsuario"] = $datos["ConsecutivoRol"];
-
-        header('Location: home.php');
-        exit();
-    } else {
-        session_destroy();
-        $mensaje = "Su información no se ha validado correctamente";
-    }
-}
-
-if (isset($_POST["btnCerrarSesion"])) {
-    session_destroy();
-    header('Location: home.php');
-    exit();
-}
-
-if(isset($_POST["btnRegistrarUsuario"]))
-{
-    $nombre = $_POST["Name"];
-    $apellido = $_POST["LastName"];
-    $nombreUsuario = $_POST["Username"];
-    $correoElectronico = $_POST["Email"];
-    $contrasenna = $_POST["Password"];
-    $telefono = $_POST["Phone"];
-    $direccion = $_POST["Address"];
-
-    // Validar que las contraseñas coincidan
-    if($_POST["Password"] != $_POST["ConfirmPassword"])
+    if($resultado != null && $resultado -> num_rows > 0)
     {
-        $_POST["txtMensaje"] = "Las contraseñas no coinciden";
+        $datos = mysqli_fetch_array($resultado);
+        $_SESSION["UsuarioID"] = $datos["UsuarioID"];
+        $_SESSION["NombreUsuario"] = $datos["NombreUsuario"];
+        $_SESSION["RolID"] = $datos["RolID"];
+        $_SESSION["Nombre"] = $datos["Nombre"];
+        $_SESSION["Apellido"] = $datos["Apellido"];
+        $_SESSION["CorreoElectronico"] = $datos["CorreoElectronico"];
+        $_SESSION["Telefono"] = $datos["Telefono"];
+        $_SESSION["Direccion"] = $datos["Direccion"];
+
+        header('location: home.php');
+        exit();
     }
     else
     {
-        // Llamar al modelo para registrar el usuario
-        $resultado = RegistrarPropietarioModel($nombre,$apellido,$nombreUsuario,$correoElectronico,$contrasenna,$telefono,$direccion);
-
-        if($resultado == true)
-        {
-            header('location: iniciarSesion.php');
-        }
-        else
-        {
-            $_POST["txtMensaje"] = "Su información no se ha registrado correctamente";
-        }
+        // Si las credenciales son incorrectas, mostrar un mensaje de error
+        $_POST["txtMensaje"] = "Correo electrónico o contraseña incorrectos";
     }
 }
+
+// Manejo del cierre de sesión
+if(isset($_GET["cerrarSesion"]))
+{
+    session_destroy();
+    header('location: iniciarSesion.php');
+    exit();
+}
+
 
 if(isset($_POST["btnRecuperarAcceso"]))
     {

@@ -1,7 +1,12 @@
 <?php 
+    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Controller/UsuarioController.php';
     include_once 'layout.php';
-    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Controller/LoginController.php';
+    if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -39,6 +44,33 @@
 
     <section class="ftco-section bg-light">
         <div class="container">
+        <!-- Mensajes -->
+        <?php
+            
+            if(isset($_SESSION["txtMensaje"]))
+            {
+                // Si el registro fue exitoso, mostrar mensaje de éxito y redirigir
+                if(isset($_SESSION["registroExitoso"]) && $_SESSION["registroExitoso"] == true)
+                {
+                    echo '<div class="alert alert-success">' . $_SESSION["txtMensaje"] . '</div>';
+                    // Redirigir después de 3 segundos
+                    echo '<script>
+                            setTimeout(function(){
+                                window.location.href = "iniciarSesion.php";
+                            }, 3000);
+                        </script>';
+                    // Limpiar variables de sesión
+                    unset($_SESSION["txtMensaje"]);
+                    unset($_SESSION["registroExitoso"]);
+                }
+                else
+                {
+                    // Mostrar mensaje de error
+                    echo '<div class="alert alert-danger">' . $_SESSION["txtMensaje"] . '</div>';
+                    unset($_SESSION["txtMensaje"]);
+                }
+            }
+        ?>
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="wrapper">
