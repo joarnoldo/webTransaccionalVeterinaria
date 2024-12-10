@@ -33,11 +33,14 @@ function MostrarMenu()
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ' . $home_active . '"><a href="../index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item ' . $about_active . '"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>
                     <li class="nav-item ' . $vet_active . '"><a href="vet.html" class="nav-link">Veterinaria</a></li>
                     <li class="nav-item ' . $services_active . '"><a href="servicios.php" class="nav-link">Servicios</a></li>
                     <li class="nav-item ' . $gallery_active . '"><a href="galeria.php" class="nav-link">Galería</a></li>
-                    <li class="nav-item ' . $blog_active . '"><a href="blog.html" class="nav-link">Blog</a></li>';
+                    <li class="nav-item ' . $blog_active . '"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item ' . $about_active . '"><a href="about.html" class="nav-link">Acerca de nosotros</a></li>'
+                    
+                    
+                    ;
 
     // Verifica si el usuario ha iniciado sesión
     if(isset($_SESSION["UsuarioID"]))
@@ -91,6 +94,42 @@ function MostrarFooter(){
             </div>
         </div>
     </footer>';
+}
+
+function IncluirCSS() {
+    echo '
+    <!-- CSS Globales -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+    ';
+}
+
+function IncluirScripts() {
+    echo '
+    <!-- JS Globales -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+    ';
 }
 
 ?>
