@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Model/BaseDatos.php';
 
-function ObtenerMascotasPropietarioModel($UsuarioID)
+function ObtenerMascotasPropietario($UsuarioID)
 {
     try {
         $enlace = AbrirBD();

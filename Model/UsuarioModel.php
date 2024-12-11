@@ -28,7 +28,7 @@
 
     //Obtener Info Macota, se debe pasar a MascotaModel.
 
-    function ObtenerMascotasPropietarioModel($UsuarioID)
+    function ObtenerMascotasPropietario($UsuarioID)
     {
         try {
             $enlace = AbrirBD();

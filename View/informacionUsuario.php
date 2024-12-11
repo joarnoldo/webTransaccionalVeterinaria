@@ -1,119 +1,62 @@
 <?php
-    include_once 'layout.php';
-    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Model/LoginModel.php';
-    include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Model/UsuarioModel.php';
-
-    if(session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
-    // Verificar si el usuario ha iniciado sesión
-    if(!isset($_SESSION["UsuarioID"]))
-    {
-        header('location: iniciarSesion.php');
-        exit();
-    }
-
-    // Obtener la información del usuario
-    $UsuarioID = $_SESSION["UsuarioID"];
-    $resultado = ObtenerInformacionUsuarioModel($UsuarioID);
-
-    if($resultado != null && $resultado->num_rows > 0)
-    {
-        $datos = mysqli_fetch_array($resultado);
-        // Obtener los datos del usuario
-        $Nombre = $datos["Nombre"];
-        $Apellido = $datos["Apellido"];
-        $CorreoElectronico = $datos["CorreoElectronico"];
-        $Telefono = $datos["Telefono"];
-        $Direccion = $datos["Direccion"];
-        $RolID = $datos["RolID"];
-    }
-    else
-    {
-        $_POST["txtMensaje"] = "No se pudo obtener la información del usuario";
-    }
+include_once 'layout.php';
+include_once $_SERVER["DOCUMENT_ROOT"] .'/webTransaccionalVeterinaria/Controller/UsuarioController.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Smile Pet - Mis Mascotas</title>
+    <title>Smile Pet - Información del Usuario</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <?php 
-    IncluirCSS();
-    ?>
-
+    <?php IncluirCSS(); ?>
 </head>
-
-
 <body>
-
-<?php 
-    MostrarMenu();
+    <?php 
+    MostrarMenu(); 
     ?>
 
-    <!-- Contenido de la página -->
     <section class="ftco-section bg-light">
         <div class="container">
             <h3 class="mb-4">Información del Usuario</h3>
 
             <?php
-                if(isset($_POST["txtMensaje"]))
+                if(isset($_SESSION["txtMensaje"]))
                 {
-                    echo '<div class="alert alert-danger">' . $_POST["txtMensaje"] . '</div>';
+                    echo '<div class="alert alert-danger">' . $_SESSION["txtMensaje"] . '</div>';
+                    unset($_SESSION["txtMensaje"]);
                 }
             ?>
 
             <div class="row">
                 <div class="col-md-6">
-                    <p><strong>Nombre:</strong> <?php echo isset($Nombre) ? $Nombre : ''; ?></p>
-                    <p><strong>Apellido:</strong> <?php echo isset($Apellido) ? $Apellido : ''; ?></p>
-                    <p><strong>Correo Electrónico:</strong> <?php echo isset($CorreoElectronico) ? $CorreoElectronico : ''; ?></p>
-                    <p><strong>Teléfono:</strong> <?php echo isset($Telefono) ? $Telefono : ''; ?></p>
-                    <p><strong>Dirección:</strong> <?php echo isset($Direccion) ? $Direccion : ''; ?></p>
+                    <p><strong>Nombre:</strong> <?php echo isset($_SESSION["Nombre"]) ? $_SESSION["Nombre"] : ''; ?></p>
+                    <p><strong>Apellido:</strong> <?php echo isset($_SESSION["Apellido"]) ? $_SESSION["Apellido"] : ''; ?></p>
+                    <p><strong>Correo Electrónico:</strong> <?php echo isset($_SESSION["CorreoElectronico"]) ? $_SESSION["CorreoElectronico"] : ''; ?></p>
+                    <p><strong>Teléfono:</strong> <?php echo isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : ''; ?></p>
+                    <p><strong>Dirección:</strong> <?php echo isset($_SESSION["Direccion"]) ? $_SESSION["Direccion"] : ''; ?></p>
                 </div>
             </div>
 
             <?php
-                // Si el usuario es un propietario (RolID = 3), mostrar sus mascotas
-                if(isset($RolID) && $RolID == 3)
+                if(isset($_SESSION["htmlMascotas"]) && !empty($_SESSION["htmlMascotas"]))
                 {
-                    // Obtener las mascotas del propietario
-                    $resultadoMascotas = ObtenerMascotasPropietarioModel($UsuarioID);
-
-                    if($resultadoMascotas != null && $resultadoMascotas->num_rows > 0)
-                    {
-                        echo '<h4 class="mt-4">Mis Mascotas</h4>';
-                        echo '<ul>';
-                        while($mascota = mysqli_fetch_array($resultadoMascotas))
-                        {
-                            echo '<li><a href="misMascotas.php?MascotaID=' . $mascota["MascotaID"] . '">' . $mascota["Nombre"] . '</a></li>';
-                        }
-                        echo '</ul>';
-                    }
-                    else
-                    {
-                        echo '<p>No tienes mascotas registradas.</p>';
-                    }
+                    echo $_SESSION["htmlMascotas"];
                 }
             ?>
+
         </div>
     </section>
 
-    <?php
-    MostrarFooter();
-    ?>
-
-    <!-- Enlaces a scripts -->
     <?php 
-    IncluirScripts();
+    MostrarFooter(); 
     ?>
-
+    <?php 
+    IncluirScripts(); 
+    ?>
 </body>
-
 </html>
+
+
+
 

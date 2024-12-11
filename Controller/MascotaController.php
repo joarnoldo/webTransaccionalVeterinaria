@@ -52,5 +52,5 @@ if(isset($_POST["btnRegistrarMascota"]))
 
 // Obtener la lista de mascotas del propietario
 $UsuarioID = $_SESSION["UsuarioID"];
-$listaMascotas = ObtenerMascotasPropietarioModel($UsuarioID);
+$listaMascotas = ObtenerMascotasPropietario($UsuarioID);
 ?>
